@@ -10,7 +10,7 @@ Think of it like a power plug adapter: your device hasn't changed, but the adapt
 
 ## Project Overview
 
-This project simulates a payment processing system where different payment providers (e.g., PayPal, Stripe, or a legacy gateway) each expose their own unique API. Rather than rewriting your application logic every time a new provider is added, an **Adapter** is used to translate each provider's interface into a single common `PaymentProcessor` interface that your application understands.
+This project simulates a payment processing system where different payment providers (e.g., PayPal, Stripe, or a legacy gateway) each expose their own unique API. Rather than rewriting your application logic every time a new provider is added, an **Adapter** is used to translate each provider's interface into a single common `PaymentByCard` interface that your application understands.
 
 ### Key Components
 
