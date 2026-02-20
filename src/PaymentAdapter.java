@@ -1,17 +1,16 @@
 public class PaymentAdapter implements PaymentByCard{
 
-    private Tokenizer tokenizer;
+    private PaymentByToken paymentByToken;
     private PaymentAPI paymentAPI;
 
     public PaymentAdapter(PaymentAPI paymentAPI) {
         this.paymentAPI = paymentAPI;
-        this.tokenizer = new Tokenizer();
+        this.paymentByToken = new PaymentAPI();
     }
 
     @Override
     public void processPayment(PaymentInfo paymentInfo){
-        String token = tokenizer.createToken(paymentInfo.getCardNumber(),
-                paymentInfo.getExpiry(), paymentInfo.getCvv());
+        String token = paymentByToken.createToken(paymentInfo.getCardNumber(), paymentInfo.getExpiry(), paymentInfo.getCvv());
 
         paymentAPI.charge(token, paymentInfo.getAmount());
     }
