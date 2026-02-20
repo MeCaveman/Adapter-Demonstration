@@ -3,7 +3,7 @@ public class PaymentAPI implements PaymentByToken {
     @Override
     public String createToken(String cardNumber, String expiry, String cvv){
         System.out.println("Generating Token....");
-        return "tok_" + cardNumber.substring(cardNumber.length() - 4) + expiry.substring(2) + cvv.substring(2);
+        return "tok_" + cardNumber.substring(cardNumber.length() - 4) + expiry + cvv;
     }
 
     @Override
